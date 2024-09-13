@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread Operator in JavaScript</title>
+</head>
+<body>
+    <h3>Spread Operator Example:</h3>
+    <script>
+       let arr = [2,3,4,5];
+            let newArr= [...arr,6,7,8]; //2,3,4,5,6,7,8
+            console.log(newArr);
+            
+            let obj={name:"Sai", age:30};
+            let newObj= {...obj,age:29,city:"Hyderabad"};
+            console.log(newObj);    
+    </script>
+</body>
+</html>

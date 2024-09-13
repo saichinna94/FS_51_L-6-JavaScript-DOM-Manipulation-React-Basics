@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise in JavaScript</title>
+</head>
+<body>
+    <h2>Promise Excample in JavaScript:</h2>
+    <script>
+        let promise = new Promise((resolve,reject)=>{
+
+            setTimeout(()=>{
+                let age = 20;
+                if(age>18){
+                    resolve("Eligble for Vote");
+                }else{
+                    reject("Not eligble for Vote")
+                }
+            },3000)
+        });
+        
+        promise
+        .then(res=> console.log(res))
+        .catch(err=> console.log(err))
+    </script>
+</body>
+</html>

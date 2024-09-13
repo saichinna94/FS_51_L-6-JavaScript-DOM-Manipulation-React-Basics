@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance in JavaScript(OOPS Concepts)</title>
+</head>
+<body>
+    <h3>Inheritance Example in JavaScript:</h3>
+    <script>
+       class Person{
+        constructor(fname, lname){
+            this.fname = fname;
+            this.lname = lname;
+        }
+        fullName(){
+            return this.fname+" "+this.lname;
+        }
+       }
+       class Employee extends Person{
+        constructor(fname,lname,salary){
+            super(fname,lname); //set fname and lname to parent constructor
+            this.salary = salary;
+        }
+        getFullDetails(){
+            return `${super.fullName()} got ${this.salary} per month`;
+        }
+       }
+       const emp1 =  new Employee("Sai Shankar","Rapolu",41789);
+       console.log(emp1.getFullDetails());
+       const emp2 =  new Employee("Rakesh","Kunchala",46000);
+       console.log(emp2.getFullDetails());
+       const emp3 =  new Employee("Raviteja","Sukhavasi",50000);
+       console.log(emp2.getFullDetails());
+    </script>
+</body>
+</html>

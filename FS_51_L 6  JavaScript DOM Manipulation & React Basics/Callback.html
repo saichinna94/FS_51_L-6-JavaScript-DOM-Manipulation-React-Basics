@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback in JavaScript</title>
+</head>
+<body>
+    <h2>Callback Excample in JavaScript:</h2>
+    <script>
+        const fetchUser=(uid,callback)=>{
+            console.log("Fetch User Details!");
+            
+            setTimeout(()=>{
+
+                callback({uid:uid, uname:"Sai Shankar Rapolu"})
+
+            },2000)
+        }
+        const fetchUserServices=(user,callback)=>{
+            console.log("Fetch User Services!");
+            
+            setTimeout(()=>{
+
+                callback(["A","B","C","D"]);
+
+            },2000)
+        }
+        const findServiceCost=(services,callback)=>{
+
+            console.log("Find Service Cost");
+            
+            setTimeout(()=>{
+
+                callback(services.length*500);
+
+            },2000)
+
+        }
+        //Nested Callback
+
+        fetchUser(101,(user)=>{
+            console.log(user);
+            
+            fetchUserServices(user, (services)=>{
+                console.log(services);
+                
+                findServiceCost(services,(cost)=>{
+                    console.log(`The Service Cost is ${cost}`);
+                    
+                })
+            })
+        })
+    </script>
+</body>
+</html>

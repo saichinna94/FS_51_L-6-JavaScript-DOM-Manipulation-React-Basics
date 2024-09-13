@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise Real time in JavaScript</title>
+</head>
+
+<body>
+    <h2>Promise Real time Excample in JavaScript:</h2>
+    <script>
+        const fetchUser = (uid, callback) => {
+            return new Promise((resolve, reject) => {
+
+                console.log("Fetch User Details!");
+
+                setTimeout(() => {
+
+                    resolve({ uid: uid, uname: "Sai Shankar Rapolu" })
+
+                }, 2000)
+
+            })
+
+        }
+        const fetchUserServices = (user) => {
+            return new Promise((resolve, reject) => {
+
+                console.log("Fetch User Services!");
+
+                setTimeout(() => {
+
+                    resolve(["A", "B", "C", "D"]);
+
+                }, 2000)
+
+            })
+
+        }
+        const findServiceCost = (services) => {
+
+            return new Promise((resolve, reject) => {
+
+
+                console.log("Find Service Cost");
+
+                setTimeout(() => {
+
+                    resolve(services.length * 500);
+
+                }, 2000)
+
+            })
+
+        }
+        fetchUser(101)
+            .then(user => fetchUserServices(user))
+            .then(services => findServiceCost(services))
+            .then(cost => console.log(`The Service Cost is ${cost}`))
+            .catch(err => console.log(err))
+    </script>
+</body>
+
+</html>

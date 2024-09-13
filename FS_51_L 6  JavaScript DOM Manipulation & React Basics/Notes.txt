@@ -1,0 +1,126 @@
+ES6 (ECMA Script 6):
+    -> let and const keyowrd.
+    -> arrow function (=>): the code is sort and concise.
+    -> Template Literal(Concatenation): With the help of backtrick (``) symbol we can render string as well as the variables.
+        eg:
+
+        let a = 10;
+        let b = 20;
+        let sum = a+b;
+
+        //old way
+        console.log("The Sum of "+a+" and "+b+" is " + sum);
+
+        //backtrick
+        console.log(`The Sum of ${a} and ${b} is ${sum}`);
+
+--> **** Spread Operator and Rest Parameter (Interview Question): 
+    -> Spread Operator(...): is used to copy or spread array or object within another array or object.
+            eg:
+
+            let arr = [2,3,4,5];
+            let newArr= [...arr,6,7,8]; //2,3,4,5,6,7,8
+            let obj={name:"Sai", age:30};
+            let newObj= {...obj,age:29,city:"Hyderabad"}
+            {name:"Sai", age:29, city:"Hyderabad"};
+
+    -> Rest Parameter(...): We can pass any number of arguments in the function. But the limitation is that the Rest
+    Parameter is the last formal Parameter of a function.
+
+    eg:
+        function myAdd(...args){
+            let sum = 0;
+            args.forEach(val=> sum+=val);
+            return sum;
+        }
+        console.log(myAdd(2,3));
+        console.log(myAdd(2,3,4));
+        console.log(myAdd(2,3,4,4));
+        console.log(myAdd(2,3,4,4,5));
+
+--> In ES6 javascript introduced OOPs Concpets: 
+        -> Class: is a group of data member, member function and its properties.
+
+                class className{
+                    //datamemeber
+                    //member function
+                    //properties
+                }
+
+        -> Constructor: Initialize the data.
+
+            constructor(){
+
+            }
+
+        -> Object: we can access the properties of a class.
+
+            const obj = new className();
+            obj.property;
+
+--> getter and setter properties (get and set keyowrd) --> Task.
+--> Inheritance (reusability): We can inherit parent class properties in a child class.
+    Extends and super keyword is used to acheive it.
+
+
+--> *** map, filter and reduce (arry methods)
+--> MAP(): It is an array method which return total number of elements as
+an applied array but we can update the values of it(return array).
+
+eg: 
+    let arr=[2,3,4,5,6];
+    let newArr=arr.map(val=> val*3); //6,9,12,15,18
+
+--> In React:
+eg:
+    let arr=["A","B","C"];
+    <ul>
+        {arr.map(val=>
+            <li>{val}</li>
+        )}
+    </ul>
+
+--> Filter: return an array as per the condition.
+
+eg:
+    let newArr = arr.filter(val=> val%2==0); //2 4
+
+--> Reduce(task)
+
+--> *** Callback and Promises: 
+--> Callback(traditional approach): We use callback to handling asynchronous operations before ES6 (promised);
+
+--> It is a function passed as arguments to other functions. It is called as Callback.
+
+eg:
+
+    function functionName(callback){
+
+        //code
+
+        return callback;
+
+    }
+    function(xyz);
+
+--> Scenario: I want to fetch user details from database with userid.
+-> with the help of user details we want to fetch services of the user.
+-> With the behalf of the services we want to find the cost of the services.
+
+    -> users --> services --> cost of the services.
+
+--> *** When we have an nested callback the it hardly to manage the errors that problem
+is known as callback hell or pyramid of doom.
+
+--> To solve this problem JavaScript introduced promises in ES6.
+
+--> Promises: are also used to handle asynchronous operations in more managable way.
+
+    -> It have 3 state
+        -> Pending: When we call a promises first it goes to pending state.
+        -> Resolve: If completed.
+        -> Reject: If not completed.
+
+*** Promise return only one value at a time either resolve or reject.
+    -> To consume it we have .then() (fullfilled)
+    -> for reject .catch() (error)

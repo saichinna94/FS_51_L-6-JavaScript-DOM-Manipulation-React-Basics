@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class in JavaScript(OOPS Concepts)</title>
+</head>
+<body>
+    <h3>Class Example in JavaScript:</h3>
+    <script>
+        class Car{
+            constructor(){
+                this.speed=50;
+            }
+            checkSpeed(){
+               console.log(`The Speed of a Car is : ${this.speed} Km/Hr`);
+                
+            }
+            acc(){
+                this.speed+=30;
+            }
+        }
+        const obj = new Car();
+        obj.checkSpeed();
+        obj.acc();
+        obj.checkSpeed();
+        obj.speed = 100;
+        obj.checkSpeed();
+    </script>
+</body>
+</html>
